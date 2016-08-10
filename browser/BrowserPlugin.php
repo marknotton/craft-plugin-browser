@@ -7,11 +7,18 @@ class BrowserPlugin extends BasePlugin {
   }
 
   public function getVersion() {
-    return '1.0';
+    return '0.1';
+  }
+
+  public function getSchemaVersion() {
+    return '0.1';
+  }
+
+  public function getDescription() {
+    return 'Gathers serverside information on the users agent data.';
   }
 
   public function getDeveloper() {
-    // Originally made by 'Jens Segers';
     return 'Yello Studio';
   }
 
