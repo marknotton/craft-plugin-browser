@@ -46,6 +46,7 @@ class BrowserPlugin extends BasePlugin {
         array(
           'browser' => craft()->browser,
           'check' => craft()->browser->agent,
+          'local' => ($_SERVER['REMOTE_ADDR']=='127.0.0.1'),
         )
       );
     }

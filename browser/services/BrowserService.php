@@ -5,7 +5,6 @@ use Jenssegers\Agent\Agent;
 class BrowserService extends BaseApplicationComponent {
 
   public $agent;    // Global variable for easy access for the additional options: https://github.com/jenssegers/agent
-  public $check;    // Alias to $agent
   public $name;     // Global variable for easy access: {{ browser.name }}
   public $version;  // Global variable for easy access: {{ browser.version }}
 
@@ -26,7 +25,7 @@ class BrowserService extends BaseApplicationComponent {
 
   // Return data attribute specifically for the html/body tags
   // {{ browser.data|default }} - Returns String
-  public function data() {   
+  public function data() {
     $version = $this->version == 0 ? '' : ' '.$this->version;
 
     $data = 'data-browser="'.$this->name.$version.'"';
@@ -79,7 +78,7 @@ class BrowserService extends BaseApplicationComponent {
       // If mutliple versions and a condition are used at the same time
       // Recreate the version array with only the more relivant version number.
       if (!is_null($condition) && count($versions) >= 2) {
-        switch ($condition) { 
+        switch ($condition) {
           case ( $condition == ">" || $condition == "=>" ):
             $versions = array(max($versions));
           break;
@@ -90,7 +89,7 @@ class BrowserService extends BaseApplicationComponent {
       }
 
       if (!empty($agents)) {
-        
+
         $checkVersion = null;
 
         // Versions
@@ -136,7 +135,7 @@ class BrowserService extends BaseApplicationComponent {
         }
 
         // The prenultimate validation.
-        // If the version is null or valid, and the browser is valid change the 
+        // If the version is null or valid, and the browser is valid change the
         // valid variable to true;
         if (is_null($valid) || $valid != false) {
           if (is_null($checkVersion) || $checkVersion == true) {
@@ -157,7 +156,7 @@ class BrowserService extends BaseApplicationComponent {
   }
 
   public function init() {
-    $this->agent = $this->check = new Agent();
+    $this->agent = new Agent();
     $this->name = strtolower($this->agent->browser());
     $this->version = floor($this->agent->version($this->agent->browser()));
   }
