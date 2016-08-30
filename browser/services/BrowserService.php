@@ -58,8 +58,10 @@ class BrowserService extends BaseApplicationComponent {
       $versions = array();
       $condition = null;
 
+      $explodeSettings = explode(' ', $settings);
+      
       // Check all the given settings
-      foreach (explode(' ', $settings) as &$setting) {
+      foreach ($explodeSettings as &$setting) {
 
         if (preg_match('[<|>|=>|<=]', $setting)) {
           // If a greater or less than condition is passed
