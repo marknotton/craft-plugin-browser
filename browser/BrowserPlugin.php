@@ -36,19 +36,16 @@ class BrowserPlugin extends BasePlugin {
     return 'https://raw.githubusercontent.com/marknotton/craft-plugin-browser/master/browser/releases.json';
   }
 
+  public function addTwigExtension() {
+    Craft::import('plugins.browser.twigextensions.browser_globals');
+    return array(
+      new browser_globals()
+    );
+  }
+
   public function init() {
     // Load in the Browser libary.
     require_once 'resources/Mobile_Detect.php';
     require_once 'resources/Agent.php';
-
-    if (!craft()->isConsole() && !craft()->request->isCpRequest())  {
-      craft()->urlManager->setRouteVariables(
-        array(
-          'browser' => craft()->browser,
-          'check' => craft()->browser->agent,
-          'local' => ($_SERVER['REMOTE_ADDR']=='127.0.0.1'),
-        )
-      );
-    }
   }
 }
