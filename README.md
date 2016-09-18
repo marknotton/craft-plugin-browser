@@ -21,32 +21,38 @@ Gathers server-side information on the users agent data.
 
 Perform a number of checks to determine wether the users browser type is a match. Returns boolean.
 
-Example 1 - Returns true if current browser is either 'IE, Edge, or Firefox'
+####Example 1:
+Returns true if current browser is either 'IE, Edge, or Firefox'
 ```
 {{ browser.is('ie edge firefox') }}
 ```
 
-Example 2 - Exactly the same as example one, but demonstrates you can pass as many arguments as you like. Each argument is handled as an "or" not an "and".
+####Example 2:
+Exactly the same as example one, but demonstrates you can pass as many arguments as you like. Each argument is handled as an "or" not an "and".
 ```
 {{ browser.is('ie', 'edge', 'firefox') }}
 ```
 
-Example 3 - Returns true if current browser is greater than IE 9
+####Example 3:
+Returns true if current browser is greater than IE 9
 ```
 {{ browser.is('ie 9 >') }}
 ```
 
-Example 4 - Returns true if current browser is greater or equal to IE 9
+####Example 4:
+Returns true if current browser is greater or equal to IE 9
 ```
 {{ browser.is('ie => 9') }}
 ```
 
-Example 5 - Returns true if current browser is either, IE version 9 or 10, Chrome version 50 or above, or Firefox any version
+####Example 5:
+Returns true if current browser is either, IE version 9 or 10, Chrome version 50 or above, or Firefox any version
 ```
 {{ browser.is('ie 9 10', 'chrome > 49', 'firefox') }}
 ```
 
-Example 6 - Just an example of how if the same function would be formatted for php
+####Example 6:
+Just an example of how if the same function would be formatted for php
 ```php
 craft()->browser->is('chrome 48');
 ```
