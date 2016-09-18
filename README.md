@@ -19,7 +19,7 @@ Gathers server-side information on the users agent data.
 
 ## Is
 
-Perform a number of checks to determine wether the users browser type is a match. Returns boolean.
+Perform a number of checks to determine wether the users browser type is a match. Returns ```boolean```.
 
 ####Example 1:
 Returns true if current browser is either 'IE, Edge, or Firefox'
