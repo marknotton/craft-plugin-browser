@@ -9,9 +9,6 @@ class BrowserService extends BaseApplicationComponent {
   public $version;  // Global variable for easy access: {{ browser.version }}
 
   // Get the full name of the browser or version number
-  // {{ browser.full }}          - Returns Array
-  // {{ browser.full.name }}     - Returns String
-  // {{ browser.full.version }}  - Returns String
   public function full() {
     $browser = $this->agent->browser();
 
@@ -24,7 +21,6 @@ class BrowserService extends BaseApplicationComponent {
   }
 
   // Return data attribute specifically for the html/body tags
-  // {{ browser.data|default }} - Returns String
   public function data() {
     $version = $this->version == 0 ? '' : ' '.$this->version;
 
@@ -34,12 +30,6 @@ class BrowserService extends BaseApplicationComponent {
   }
 
 
-  // Usage example 1  {Twig} - {{ browser.is('ie edge firefox') }} - Returns true if current browser is any of those
-  // Usage example 1a {Twig} - {{ browser.is('ie', 'edge', 'firefox') }} - Same as example 1
-  // Usage example 2  {Twig} - {{ browser.is('ie 9 >') }} // Returns true if current browser is greater than ie 9
-  // Usage example 3  {Twig} - {{ browser.is('ie => 9') }} // Returns true if current browser is greater or equal to ie 9
-  // Usage example 4  {PHP}  - craft()->browser->is('chrome 48'); // Returns true if current browser is chrome version 48
-  // Usage example 5  {Twig} - {{ browser.is('ie 9 10', 'chrome > 49', 'firefox') }}
   // ... Returns true if current browser is EITHER, IE version 9 or 10, Chrome version 50 or above, or Firefox any version
   public function is() {
 
@@ -59,7 +49,7 @@ class BrowserService extends BaseApplicationComponent {
       $condition = null;
 
       $explodeSettings = explode(' ', $settings);
-      
+
       // Check all the given settings
       foreach ($explodeSettings as &$setting) {
 
