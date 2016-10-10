@@ -37,9 +37,9 @@ class BrowserPlugin extends BasePlugin {
   }
 
   public function addTwigExtension() {
-    Craft::import('plugins.browser.twigextensions.browser_globals');
+    Craft::import('plugins.browser.twigextensions.Browser_Globals');
     return array(
-      new browser_globals()
+      new Browser_Globals()
     );
   }
 

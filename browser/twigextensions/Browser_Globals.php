@@ -3,7 +3,7 @@ namespace Craft;
 
 use Twig_Extension;
 
-class browser_globals extends \Twig_Extension {
+class Browser_Globals extends \Twig_Extension {
 
   public function getName() {
     return Craft::t('Browser Globals');
