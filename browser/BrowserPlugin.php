@@ -37,9 +37,18 @@ class BrowserPlugin extends BasePlugin {
   }
 
   public function addTwigExtension() {
-    Craft::import('plugins.browser.twigextensions.Browser_Globals');
+    if (!craft()->isConsole() && craft()->request->isSiteRequest() && craft()->plugins->getPlugin('settings')) {
+      craft()->settings->addGlobals($this->getGlobals());
+    } else {
+      Craft::import('plugins.browser.twigextensions.Browser_Globals');
+      return new Browser_Globals();
+    }
+  }
+
+  public function getGlobals() {
     return array(
-      new Browser_Globals()
+      'browser' => craft()->browser,
+      'local' => ($_SERVER['REMOTE_ADDR']=='127.0.0.1'),
     );
   }
 
