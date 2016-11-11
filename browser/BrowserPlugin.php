@@ -49,6 +49,7 @@ class BrowserPlugin extends BasePlugin {
     return array(
       'browser' => craft()->browser,
       'local' => ($_SERVER['REMOTE_ADDR']=='127.0.0.1'),
+      'robot' => craft()->browser->agent->isRobot(),
     );
   }
 
