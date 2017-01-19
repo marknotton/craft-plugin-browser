@@ -10,11 +10,6 @@ class Browser_Globals extends \Twig_Extension {
   }
 
   public function getGlobals() {
-    $globals = array(
-      'browser' => craft()->browser,
-      'local' => ($_SERVER['REMOTE_ADDR']=='127.0.0.1'),
-    );
-
-    return $globals;
+    return craft()->plugins->getPlugin('browser')->getGlobals();
   }
 }

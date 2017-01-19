@@ -2,7 +2,7 @@
 
 # Browser *for Craft CMS*
 
-Gathers server-side information on the users agent data.
+Query the server-side information from the users agent data.
 
 ##Table of Contents
 
@@ -28,7 +28,7 @@ Returns true if current browser is either 'IE, Edge, or Firefox'
 ```
 
 ####Example 2:
-Exactly the same as example one, but demonstrates you can pass as many arguments as you like. Each argument is handled as an "or" not an "and".
+Exactly the same as example one, but demonstrates you can pass in as many arguments as you like. Each argument is handled as an "or" not an "and".
 ```
 {{ browser.is('ie', 'edge', 'firefox') }}
 ```
@@ -52,7 +52,7 @@ Returns true if current browser is either, IE version 9 or 10, Chrome version 50
 ```
 
 ####Example 6:
-Just an example of how if the same function would be formatted for php
+Just an example of how if the same function could be formatted in php
 ```php
 craft()->browser->is('chrome 48');
 ```
@@ -60,14 +60,14 @@ craft()->browser->is('chrome 48');
 ----
 ## Data
 
-Echo out's a data attribute with name and version number. Ideal for querying via Javascript or CSS
+Echos out a data attribute with the browser name and version number. Ideal for querying via Javascript or CSS
 
-#### Example
+#### Example:
 ```
 {{ browser.data|default }}
 ```
 
-#### Example Output
+#### Example Output:
 ```html
 data-browser="chrome 52"
 ```
@@ -103,7 +103,7 @@ Returns version number
 ```
 
 ## Local
-A very quick check to see if you are on a local or live server. Returns ```Boolean```
+A very quick check to see if the site is running locally. Added for developers. Returns ```Boolean```
 ```
 {{ local }}
 ```
