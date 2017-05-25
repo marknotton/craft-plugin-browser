@@ -4,7 +4,7 @@
 
 Query the server-side information from the users agent data.
 
-##Table of Contents
+## Table of Contents
 
 - [Dependencies](#dependencies)
 - [Is](#is)
@@ -12,7 +12,7 @@ Query the server-side information from the users agent data.
 - [Full](#full)
 - [Local](#locl)
 
-##Dependencies
+## Dependencies
 
 - [Agent by Jens Segers](https://github.com/jenssegers/agent)
 - [Mobile Detect](http://mobiledetect.net/)
@@ -21,37 +21,37 @@ Query the server-side information from the users agent data.
 
 Perform a number of checks to determine wether the users browser type is a match. Returns ```boolean```.
 
-####Example 1:
+#### Example 1:
 Returns true if current browser is either 'IE, Edge, or Firefox'
 ```
 {{ browser.is('ie edge firefox') }}
 ```
 
-####Example 2:
+#### Example 2:
 Exactly the same as example one, but demonstrates you can pass in as many arguments as you like. Each argument is handled as an "or" not an "and".
 ```
 {{ browser.is('ie', 'edge', 'firefox') }}
 ```
 
-####Example 3:
+#### Example 3:
 Returns true if current browser is greater than IE 9
 ```
 {{ browser.is('ie 9 >') }}
 ```
 
-####Example 4:
+#### Example 4:
 Returns true if current browser is greater or equal to IE 9
 ```
 {{ browser.is('ie => 9') }}
 ```
 
-####Example 5:
+#### Example 5:
 Returns true if current browser is either, IE version 9 or 10, Chrome version 50 or above, or Firefox any version
 ```
 {{ browser.is('ie 9 10', 'chrome > 49', 'firefox') }}
 ```
 
-####Example 6:
+#### Example 6:
 Just an example of how if the same function could be formatted in php
 ```php
 craft()->browser->is('chrome 48');
