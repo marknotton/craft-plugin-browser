@@ -109,7 +109,7 @@ A very quick check to see if the site is running locally. Added for developers. 
 {{ local }}
 ```
 ## Session
-The Craft [HttpSessionSerive](https://craftcms.com/classreference/services/HttpSessionService#getIsStarted-detail) has been exposed, and is now acceible using Twig.
+The Craft [HttpSessionSerive](https://craftcms.com/classreference/services/HttpSessionService#getIsStarted-detail) has been exposed, and is now accessible using Twig.
 
 ```
 {{ browser.session.add('foo', true) }}
