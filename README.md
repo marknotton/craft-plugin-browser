@@ -10,7 +10,8 @@ Query the server-side information from the users agent data.
 - [Is](#is)
 - [Data](#data)
 - [Full](#full)
-- [Local](#locl)
+- [Local](#local)
+- [Session](#session)
 
 ## Dependencies
 
@@ -106,4 +107,11 @@ Returns version number
 A very quick check to see if the site is running locally. Added for developers. Returns ```Boolean```
 ```
 {{ local }}
+```
+## Session
+The Craft [HttpSessionSerive](https://craftcms.com/classreference/services/HttpSessionService#getIsStarted-detail) has been exposed, and is now acceible using Twig.
+
+```
+{{ browser.session.add('foo', true) }}
+{{ browser.session.get('foo') }}
 ```
