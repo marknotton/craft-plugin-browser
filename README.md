@@ -7,6 +7,7 @@ Query the server-side information from the users agent data.
 ## Table of Contents
 
 - [Dependencies](#dependencies)
+- [Agent](#agent)
 - [Is](#is)
 - [Data](#data)
 - [Full](#full)
@@ -17,6 +18,14 @@ Query the server-side information from the users agent data.
 
 - [Agent by Jens Segers](https://github.com/jenssegers/agent)
 - [Mobile Detect](http://mobiledetect.net/)
+
+## Agent
+
+If you want to use some of the native functionality from [Agent](https://github.com/jenssegers/agent) you can simply query the global agent instance:
+
+```
+{{ browser.agent.isPhone() }}
+```
 
 ## Is
 
