@@ -29,10 +29,9 @@ class BrowserService extends BaseApplicationComponent {
     echo $data;
   }
 
-  // Exposes the craft session to the public
-  public function session() {
-    return craft()->httpSession;
-  }
+	public function session() {
+		return craft()->httpSession;
+	}
 
   // ... Returns true if current browser is EITHER, IE version 9 or 10, Chrome version 50 or above, or Firefox any version
   public function is() {
