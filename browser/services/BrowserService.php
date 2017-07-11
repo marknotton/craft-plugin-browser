@@ -24,11 +24,15 @@ class BrowserService extends BaseApplicationComponent {
   public function data() {
     $version = $this->version == 0 ? '' : ' '.$this->version;
 
-    $data = 'data-browser="'.$this->name.$version.'"';
+    $data = 'data-browser="'.$this->name.$version.'" ';
+    $data .= ' data-platform="'.strtolower($this->agent->platform()).'" ';
 
     echo $data;
   }
 
+	public function session() {
+		return craft()->httpSession;
+	}
 
   // ... Returns true if current browser is EITHER, IE version 9 or 10, Chrome version 50 or above, or Firefox any version
   public function is() {

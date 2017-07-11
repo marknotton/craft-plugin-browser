@@ -1,6 +1,8 @@
 <?php
 namespace Craft;
 
+require_once 'vendor/autoload.php';
+
 class BrowserPlugin extends BasePlugin {
   public function getName() {
     return Craft::t('Browser');
@@ -54,9 +56,4 @@ class BrowserPlugin extends BasePlugin {
     );
   }
 
-  public function init() {
-    // Load in the Browser libary.
-    require_once 'resources/Mobile_Detect.php';
-    require_once 'resources/Agent.php';
-  }
 }
