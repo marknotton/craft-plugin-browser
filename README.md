@@ -1,8 +1,6 @@
-# Browser plugin for Craft CMS 3.x
+# Browser plugin for Craft CMS 3.x RC12
 
 Query the server-side information from the users agent data.
-
-![Screenshot](resources/img/plugin-logo.png)
 
 ## Requirements
 
@@ -18,7 +16,7 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require https://github.com/marknotton/craft3-plugin-browser/browser
+        composer require https://github.com/marknotton/craft-plugin-browser/browser
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Browser.
 
